@@ -90,3 +90,51 @@ print(f'The sum of {num1} and {num2} is {num1 + num2}') # The sum of 5 and 10 is
 > greeting[0] = 'H' # TypeError: 'str' object does not support item assignment
 > ```
 
+## Corte de cadenas(no modifica la cadena original): 
+```python
+my_str = 'Hello world'
+print(my_str[1:4]) # ell
+
+my_str = 'Hello world'
+print(my_str[:7])  # Hello w
+
+my_str = 'Hello world'
+print(my_str[8:])  # rld
+```
+Tambien hay otro parametro opcional para el corte de cadenas, el step(Sintaxis: [start:stop:step]) que se usa para especificar el incremento entre cada índice:
+```python
+my_str = 'Hello world'
+print(my_str[0:11:2])  # Hlowrd
+```
+
+Podemos poner el step en -1 y dejar los otros parametros vacios para invertir la cadena:
+```python
+my_str = 'Hello world'
+print(my_str[::-1]) # dlrow olleH
+```
+
+## Metodos mas comunes para las cadenas:
+
+- **upper()**: Devuelve una nueva cadena con todos los caracteres convertidos a mayúsculas.
+```python
+my_str = 'hello world'
+
+uppercase_my_str = my_str.upper()
+print(uppercase_my_str)  # HELLO WORLD
+```
+
+- **lower()**: Devuelve una nueva cadena con todos los caracteres convertidos a minúsculas.
+```python
+my_str = 'Hello World'
+
+lowercase_my_str = my_str.lower()
+print(lowercase_my_str)  # hello world
+```
+
+- **strip()**: Devuelve una nueva cadena con los caracteres especificados de inicio y final eliminados. Si no se pasa ningún argumento, elimina los espacios en blanco de inicio y final.
+```python
+my_str = '  hello world  '
+
+trimmed_my_str = my_str.strip()
+print(trimmed_my_str)  # "hello world"
+```
