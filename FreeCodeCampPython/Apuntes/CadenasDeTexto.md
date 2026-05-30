@@ -1,11 +1,11 @@
 # CADENAS DE TEXTO
-## Cadenas simples:
+### Cadenas simples:
 ```python
 my_str_1 = 'Hello' 
 my_str_2 = "World" 
 ```
 
-## Cadenas multilineas:
+### Cadenas multilineas:
 ```python
 my_str_3 = """Multiline 
 string""" 
@@ -14,7 +14,7 @@ multiline
 string''' 
 ```
 
-## Verificar si una cadena contiene uno o mas caracteres:
+### Verificar si una cadena contiene uno o mas caracteres:
 ```python
 my_str = 'Hello world' 
  
@@ -25,13 +25,13 @@ print('e' in my_str)  # True
 print('f' in my_str)  # False 
 ```
 
-## Longitud de una cadena de caracteres:
+### Longitud de una cadena de caracteres:
 ```python
 my_str = 'Hello world' 
 print(len(my_str))  # 11 
 ```
 
-## Saber caracter de la posicion n(tambien sirve la indexacion negativa):
+### Saber caracter de la posicion n (tambien sirve la indexacion negativa):
 ```python
 my_str = "Hello world" 
  
@@ -39,7 +39,7 @@ print(my_str[0])  # H
 print(my_str[6])  # w 
 ```
 
-## Concatenacion de cadenas:
+### Concatenacion de cadenas:
 ```python
 my_str_1 = 'Hello' 
 my_str_2 = "World" 
@@ -67,7 +67,7 @@ name_and_age = name + str(age)
 print(name_and_age) # John Doe26 
 ```
 
-## Insertar variables dentro de cadenas de texto usando f o F: 
+### Insertar variables dentro de cadenas de texto usando f o F: 
 ```python
 name = 'John Doe' 
 age = 26 
@@ -91,7 +91,7 @@ print(f'The sum of {num1} and {num2} is {num1 + num2}') # The sum of 5 and 10 is
 > greeting[0] = 'H' # TypeError: 'str' object does not support item assignment
 > ```
 
-## Corte de cadenas: 
+### Corte de cadenas: 
 ```python
 my_str = 'Hello world'
 print(my_str[1:4]) # ell
@@ -118,7 +118,7 @@ print(my_str[::-1]) # dlrow olleH
 > ### A TENER EN CUENTA:
 > El corte de cadenas no modifica la cadena original.
 
-## Metodos mas comunes para las cadenas:
+### Metodos mas comunes para las cadenas:
 
 - **upper()**: Devuelve una nueva cadena con todos los caracteres convertidos a mayúsculas.
 ```python
