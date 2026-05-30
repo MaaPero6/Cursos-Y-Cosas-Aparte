@@ -83,7 +83,6 @@ print(type(my_int))  # <class 'int'>
 ```
 
 > [!NOTE]
-> ### DATO A SABER
 > También se pueden usar usar las mismas funciones incorporadas para convertir una cadena de texto en un flotante o entero:
 ```python
 my_str_int = '45'
