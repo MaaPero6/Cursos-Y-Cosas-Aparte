@@ -84,16 +84,16 @@ print(type(my_int))  # <class 'int'>
 
 > [!NOTE]
 > También se pueden usar usar las mismas funciones incorporadas para convertir una cadena de texto en un flotante o entero:
-```python
-my_str_int = '45'
-my_str_float = '7.8'
-
-converted_int = int(my_str_int)
-converted_float = float(my_str_float)
-
-print(converted_int, type(converted_int))  # 45 <class 'int'>
-print(converted_float, type(converted_float))  # 7.8 <class 'float'>
-```
+> ```python
+> my_str_int = '45'
+> my_str_float = '7.8'
+>
+> converted_int = int(my_str_int)
+> converted_float = float(my_str_float)
+>
+> print(converted_int, type(converted_int))  # 45 <class 'int'>
+> print(converted_float, type(converted_float))  # 7.8 <class 'float'>
+> ```
 
 - **round():** Redondea un número a un número especificado de lugares decimales. Por defecto, esta función redondea al entero más cercano y devuelve un número entero sin lugares decimales:
 ```python
