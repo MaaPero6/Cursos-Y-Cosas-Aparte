@@ -79,7 +79,7 @@ num2 = 10
 print(f'The sum of {num1} and {num2} is {num1 + num2}') # The sum of 5 and 10 is 15 
 ```
 
-> [!NOTE]
+> [!NOTE] 
 > ### NOTA IMPORTANTE:
 > Las cadenas en Python son tipos de datos inmutables, por lo que puedes reasignar una cadena diferente a una variable, pero no puedes modificar una cadena directamente: 
 > ```python
