@@ -85,7 +85,7 @@ print(f'The sum of {num1} and {num2} is {num1 + num2}') # The sum of 5 and 10 is
 > greeting = 'hi'
 > greeting = 'hello'
 > print(greeting) # hello
-
+>
 > greeting = 'hi'
 > greeting[0] = 'H' # TypeError: 'str' object does not support item assignment
 > ```
