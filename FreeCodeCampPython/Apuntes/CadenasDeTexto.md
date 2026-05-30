@@ -79,7 +79,7 @@ num2 = 10
 print(f'The sum of {num1} and {num2} is {num1 + num2}') # The sum of 5 and 10 is 15 
 ```
 
-> [!NOTE]
+> [!NOTE] NOTA
 > Las cadenas en Python son tipos de datos inmutables, por lo que puedes reasignar una cadena diferente a una variable, pero no puedes modificar una cadena directamente: 
 > ```python
 > greeting = 'hi'
@@ -90,7 +90,7 @@ print(f'The sum of {num1} and {num2} is {num1 + num2}') # The sum of 5 and 10 is
 > greeting[0] = 'H' # TypeError: 'str' object does not support item assignment
 > ```
 
-## Corte de cadenas(no modifica la cadena original): 
+## Corte de cadenas: 
 ```python
 my_str = 'Hello world'
 print(my_str[1:4]) # ell
@@ -112,6 +112,9 @@ Podemos poner el step en -1 y dejar los otros parametros vacios para invertir la
 my_str = 'Hello world'
 print(my_str[::-1]) # dlrow olleH
 ```
+
+> [!IMPORTANT] 
+> El corte de cadenas no modifica la cadena original.
 
 ## Metodos mas comunes para las cadenas:
 
