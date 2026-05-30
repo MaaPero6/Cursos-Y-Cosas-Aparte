@@ -79,8 +79,8 @@ num2 = 10
 print(f'The sum of {num1} and {num2} is {num1 + num2}') # The sum of 5 and 10 is 15 
 ```
 
-> [!NOTE] 
-> ### NOTA IMPORTANTE:
+> [!IMPORTANT]
+> ### A TENER EN CUENTA: 
 > Las cadenas en Python son tipos de datos inmutables, por lo que puedes reasignar una cadena diferente a una variable, pero no puedes modificar una cadena directamente: 
 > ```python
 > greeting = 'hi'
@@ -115,6 +115,7 @@ print(my_str[::-1]) # dlrow olleH
 ```
 
 > [!IMPORTANT] 
+> ### A TENER EN CUENTA:
 > El corte de cadenas no modifica la cadena original.
 
 ## Metodos mas comunes para las cadenas:
@@ -141,4 +142,92 @@ my_str = '  hello world  '
 
 trimmed_my_str = my_str.strip()
 print(trimmed_my_str)  # "hello world"
+```
+
+- **split(separador)**: Divide una cadena en un separador especificado en una lista de cadenas. Si no se especifica un separador, divide por espacios en blanco.
+```python
+my_str = 'hello world'
+
+split_words = my_str.split()
+print(split_words)  # ['hello', 'world']
+```
+
+- **join(iterable)**: Une elementos de un iterable en una cadena con un separador.
+```python
+my_list = ['hello', 'world']
+
+joined_my_str = ' '.join(my_list)
+print(joined_my_str)  # hello world
+```
+
+- **startswith(prefijo)**: Devuelve un valor booleano indicando si una cadena comienza con el prefijo especificado.
+```python
+my_str = 'hello world'
+
+starts_with_hello = my_str.startswith('hello')
+print(starts_with_hello)  # True
+```
+
+- **endswith(sufijo)**: Devuelve un valor booleano indicando si una cadena termina con el sufijo especificado.
+```python
+my_str = 'hello world'
+
+ends_with_world = my_str.endswith('world')
+print(ends_with_world)  # True
+```
+
+- **find(subcadena)**: Devuelve el índice de la primera ocurrencia de subcadena, o -1 si no encuentra ninguna.
+```python
+my_str = 'hello world'
+
+world_index = my_str.find('world')
+print(world_index)  # 6
+```
+
+- **count(subcadena)**: Devuelve el número de veces que una subcadena aparece en una cadena.
+```python
+my_str = 'hello world'
+
+o_count = my_str.count('o')
+print(o_count)  # 2
+```
+
+- **capitalize()**: Devuelve una nueva cadena con el primer carácter en mayúscula y los demás caracteres en minúscula.
+```python
+my_str = 'hello world'
+
+capitalized_my_str = my_str.capitalize()
+print(capitalized_my_str)  # Hello world
+```
+
+- **isupper()**: Devuelve True si todas las letras en la cadena están en mayúsculas y False si no.
+```python
+my_str = 'hello world'
+
+is_all_upper = my_str.isupper()
+print(is_all_upper)  # False
+```
+
+- **islower()**: Devuelve True si todas las letras en la cadena están en minúsculas y False si no.
+```python
+my_str = 'hello world'
+
+is_all_lower = my_str.islower()
+print(is_all_lower)  # True
+```
+
+- **title()**: Devuelve una nueva cadena con la primera letra de cada palabra en mayúscula.
+```python
+my_str = 'hello world'
+
+title_case_my_str = my_str.title()
+print(title_case_my_str)  # Hello World
+```
+
+- **swapcase()**: Invierte las mayúsculas y minúsculas.
+```python
+my_str = 'hello world'
+
+swapped_my_str = my_str.swapcase()
+print(swapped_my_str)  # HELLO WORLD
 ```
