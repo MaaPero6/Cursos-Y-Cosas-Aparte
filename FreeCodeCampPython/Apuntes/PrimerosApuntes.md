@@ -1,4 +1,6 @@
-# DICCIONARIO PYTHON 
+# PRIMEROS APUNTES:
+## Tipos de datos basicos de python:
+```python
 my_integer_var = 10 
 print(type(my_integer_var))  # <class 'int'> 
  
@@ -28,18 +30,21 @@ print(type(my_list)) # <class 'list'>
  
 my_none_var = None 
 print(type(my_none_var))  # <class 'NoneType'> 
+```
 
-
-# Obtener el tipo de dato de una variable: 
+## Obtener el tipo de dato de una variable:
+```python
 my_var_1 = 'Hello world' 
 my_var_2 = 21 
  
 print(type(my_var_1)) # <class 'str'> 
 print(type (my_var_2)) # <class 'int'> 
+```
 
-
-# Verificar si una variable coincide con un dato especifico: 
+## Verificar si una variable coincide con un tipo de dato específico:
+```python
 isinstance('Hello world', str) # True 
 isinstance(True, bool) # True 
 isinstance(42, int) # True 
 isinstance('John Doe', int) # False 
+```
