@@ -63,7 +63,7 @@ exp_ints = my_int_1 ** my_int_2
 print('Integer Exponentiation:', exp_ints) # Integer Exponentiation: 951166013805414055936
 ```
 
-### Metodos mas comunes para los numeros:
+## Metodos mas comunes para los numeros:
 - **float():** Devuelve un número de punto flotante construido a partir del número dado:
 ```python
 my_int_1 = 56
