@@ -803,3 +803,227 @@ ID: 4
 > En este ejemplo, `zip()` combina las dos listas en pares de elementos y devuelve un iterador de tuplas. El ciclo `for` luego desempaqueta cada tupla en `name` e `id`[cite: 2]. Finalmente, en cada instrucción `print`, estamos imprimiendo cada `name` e `id` de las listas `ids` y `developers` respectivamente.
 
 Las funciones `enumerate()` y `zip()` son muy poderosas, y cuando se combinan con bucles, pueden hacer que tu código sea mucho más conciso.
+
+
+## ¿Qué son las comprensiones de listas y cuáles son algunas funciones útiles para trabajar con listas?
+Durante las últimas lecciones, te has estado familiarizando con el trabajo con bucles como este:
+```python
+even_numbers = []
+for num in range(21):
+    if num % 2 == 0:
+        even_numbers.append(num)
+
+print(even_numbers)
+```
+
+El resultado sería:
+```text
+[0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+```
+> [!NOTE]
+> Este ejemplo crea una nueva lista vacía llamada `even_numbers` y recorre una secuencia de números entre 0 y 20. Dentro del ciclo, hay una condición que verifica si el número actual tiene un residuo de 0 al dividirse por 2. Esto se usa para determinar si el número es par. Si la condición es `True`, entonces el `num` actual se agrega al final de la lista `even_numbers`. Finalmente, imprimimos la lista `even_numbers` en la consola.
+
+Aunque este código funciona, hay una forma más concisa de escribirlo que utiliza **comprensión de listas** (list comprehension). La comprensión de listas te permite crear una nueva lista en una sola línea combinando un bucle y una condición directamente dentro de corchetes. Esto hace que el código sea más corto y, a menudo, más fácil de leer.
+
+Aquí está el ejemplo refactorizado de antes usando corchetes:
+```python
+even_numbers = [num for num in range(21) if num % 2 == 0]
+print(even_numbers)
+```
+
+El resultado sería:
+```text
+[0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+```
+> [!NOTE]
+> En este ejemplo refactorizado, la lista `even_numbers` se crea usando una sola línea de código. La comprensión de listas recorre los números desde 0 hasta 20 e incluye solo aquellos que son divisibles por 2. Este enfoque es más compacto y elimina la necesidad de un ciclo y un bloque condicional separados.
+
+Veamos otro ejemplo para que puedas entender mejor cómo funciona la comprensión de listas cuando usamos un operador condicional completo (`if-else`):
+```python
+numbers = [1, 2, 3, 4, 5]
+result = [(num, 'Even') if num % 2 == 0 else (num, 'Odd') for num in numbers]
+print(result)
+```
+
+El resultado sería:
+```text
+[(1, 'Odd'), (2, 'Even'), (3, 'Odd'), (4, 'Even'), (5, 'Odd')]
+```
+> [!NOTE]
+> En este ejemplo, tenemos una lista de números y queremos crear una nueva lista de tuplas que indiquen cuáles números son pares o impares. En la primera parte de la comprensión de listas, usamos una sentencia `if` para verificar si el número es divisible por 2. Si es así, entonces el resultado es una tupla con ese número seguido de la palabra *Even*. De lo contrario, el resultado es una tupla con el número seguido de la palabra *Odd*.
+
+Otra forma de crear una lista a partir de un iterable existente es la función `filter()`. Aquí tienes un ejemplo de cómo crear una nueva lista con solo palabras de más de cuatro caracteres:
+```python
+words = ['tree', 'sky', 'mountain', 'river', 'cloud', 'sun']
+
+def is_long_word(word):
+    return len(word) > 4
+
+long_words = list(filter(is_long_word, words))
+print(long_words)
+```
+
+El resultado sería:
+```text
+['mountain', 'river', 'cloud']
+```
+> [!NOTE]
+> La función `filter()` se usa para seleccionar elementos de un iterable que cumplen una condición específica. La función `filter()` acepta una función y un iterable como argumentos. En este ejemplo, estamos pasando una función `is_long_word` a la función `filter()` para verificar si el conteo actual de palabras es mayor que 4. Todas las palabras que tienen un conteo de caracteres mayor que 4 se agregan a una nueva lista y se asignan a la variable `long_words`.
+
+Además de la función `filter()`, hay algunas funciones más que son útiles cuando trabajas con listas. Otra función que debes conocer es la función `map()`, que toma un iterable y aplica una función a cada uno de sus elementos. Aquí tienes un ejemplo de cómo usar la función `map()` para convertir una lista de temperaturas de Celsius a Fahrenheit:
+
+```python
+celsius = [0, 10, 20, 30, 40]
+
+def to_fahrenheit(temp):
+    return (temp * 9/5) + 32
+
+fahrenheit = list(map(to_fahrenheit, celsius))
+print(fahrenheit)
+```
+
+El resultado sería:
+```text
+[32.0, 50.0, 68.0, 86.0, 104.0]
+```
+> [!NOTE]
+> Al igual que la función `filter()`, `map()` acepta una función y un iterable como argumentos. La función `to_fahrenheit` toma una temperatura y la convierte de Celsius a Fahrenheit en cada posición del iterable.
+
+La última función que veremos es la función `sum()`. Esta función se usa para obtener la suma de un iterable como una lista o una tupla. Aquí tienes un ejemplo de cómo usar la función `sum()`:
+
+```python
+numbers = [5, 10, 15, 20]
+total = sum(numbers)
+print(total)
+```
+
+El resultado sería:
+```text
+50
+```
+
+También puedes pasar un argumento opcional `start` que establece el valor inicial para la suma. Aquí hay un ejemplo actualizado usando el argumento `start` como un argumento posicional:
+```python
+numbers = [5, 10, 15, 20]
+total = sum(numbers, 10)  # positional argument
+print(total)
+```
+
+El resultado sería:
+```text
+60
+```
+
+También puedes optar por usar el argumento `start` como un argumento de palabra clave (keyword argument) en lugar de esto:
+```python
+numbers = [5, 10, 15, 20]
+total = sum(numbers, start=10)  # keyword argument
+print(total)
+```
+
+El resultado sería:
+```text
+60
+```
+> [!NOTE]
+> Ambas versiones producirán el mismo resultado, pero el argumento de palabra clave es un poco más explícito y ayuda a entender de un vistazo qué significa ese segundo número.
+
+La comprensión de listas, así como otras funciones como `map()`, `filter()` y `sum()`, pueden parecer un poco confusas al principio. Pero con suficiente práctica y tiempo, comenzarás a sentirte más cómodo usándolas en tus programas de Python.
+
+
+## ¿Qué son las funciones Lambda y cómo funcionan?
+A lo largo de las lecciones anteriores, te has acostumbrado a definir funciones usando la palabra clave `def` así:
+```python
+def square(num):
+    return num ** 2
+
+print(square(4))
+```
+
+El resultado sería:
+```text
+16
+```
+
+Pero cuando se trata de trabajar con funciones de orden superior como `map()` y `filter()`, puedes usar una función anónima en línea. Aquí es donde entran las **funciones lambda**.
+
+Así es como se ve la función `square()` cuando se refactoriza en una función lambda:
+```python
+lambda num: num ** 2
+```
+> [!NOTE]
+> Como se mencionó antes, las funciones lambda son anónimas, por lo que esta función ya no tiene el nombre `square` asociado.
+
+Las funciones lambda son ideales cuando necesitas usarlas en funciones de orden superior como esta:
+```python
+numbers = [1, 2, 3, 4, 5]
+
+even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
+print(even_numbers)
+```
+
+El resultado sería:
+```text
+[2, 4]
+```
+> [!NOTE]
+> En este ejemplo, tenemos una lista de números y queremos crear una nueva lista de números pares. Entonces, pasamos una función lambda como uno de los argumentos a la función `filter()` para obtener una nueva lista que contiene los números 2 y 4.
+
+Al trabajar con funciones lambda, es importante estar al tanto de las mejores prácticas. Por ejemplo, no es buena práctica asignar una función lambda a una variable de esta manera:
+```python
+numbers = [1, 2, 3, 4, 5]
+
+square = lambda x: x ** 2
+squared_numbers = list(map(square, numbers))
+print(squared_numbers)
+```
+
+El resultado sería:
+```text
+[1, 4, 9, 16, 25]
+```
+
+Esto va en contra del propósito de usar funciones anónimas. En este caso, deberías usar una función regular, así:
+```python
+numbers = [1, 2, 3, 4, 5]
+
+def square(num):
+    return num ** 2
+
+squared_numbers = list(map(square, numbers))
+print(squared_numbers)
+```
+
+El resultado sería:
+```text
+[1, 4, 9, 16, 25]
+```
+
+Además, debes evitar crear funciones lambda que sean difíciles de leer o innecesariamente complicadas, como esta:
+```python
+result = (lambda x: (x**2 + 2*x - 1) if x > 0 else (x**3 - x + 4))(3)
+print(result)
+```
+
+El resultado sería:
+```text
+14
+```
+
+Aunque esta función se ejecuta bien y produce el resultado correcto de 14, no es fácil de leer ni de entender. En este caso, sería mejor crear una función separada con una estructura `if/else`, y luego llamar a esa función:
+```python
+def calculate_expression(x):
+    if x > 0:
+        return x**2 + 2*x - 1
+    else:
+        return x**3 - x + 4
+
+print(calculate_expression(3))
+```
+
+El resultado sería:
+```text
+14
+```
+
+Tanto las funciones regulares como las funciones lambda tienen sus casos de uso en programas de Python. Si estás trabajando con una sola expresión en línea, entonces podrías considerar usar una función lambda. De lo contrario, usar una función regular sería la mejor opción.
